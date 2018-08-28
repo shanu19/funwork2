@@ -7,7 +7,7 @@ const app            = express();
 
 const port = process.env.PORT || 8000;
 
-app.use('/app' , express.static( __dirname + '/app'));
+app.use(express.static( __dirname + '/app/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 MongoClient.connect(db.url, (err, database) => {
